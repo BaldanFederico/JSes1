@@ -3,6 +3,44 @@
     <title>ES 1</title>
   </head>
   <body>
-    ciao internet
+   <button onclick= "console.log('click da evento')">
+   cliccami da evento</button>
+   <button onclick= "funzioneClick('script')">cliccami da script</button>
+   <button id="btn3">cliccami da listener</button>
+  <div id="div1">
+  <p>  Non premere per cortesia</p>
+  </div>
+
+ <script>
+   //Operazioni
+   
+   // var funzioneClick= function(){
+   // console.log("click da script");
+   // };                                                                                               
+   //funzioneClick();
+
+   var funzioneClick = function (stringa){
+     console.log("click da" + stringa);
+   }
+   var contatore= 1;
+   var bottone3= document.getElementById("btn3");
+   bottone3.addEventListener("click",
+   function(){
+     funzioneClick("listener");
+var div1= document.getElementById("div1");
+     div1.setAttribute("style","background-color: pink");
+     div1.innerHTML ="<h1>ti avevo detto di non cliccare</h1>";
+     if (contatore==0){
+      bottone3.setAttribute("style","background-color: green");
+       contatore=1;
+       }else{
+      bottone3.setAttribute("style","background-color: red");
+      contatore=0;
+     }
+
+   }
+   );
+
+ </script>
   </body>
 </html>
